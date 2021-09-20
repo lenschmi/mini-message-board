@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+		<a href='/new'>Add Message</a>
+    <h1><%= title %></h1>
+		<ul>
+      <% for(const message of messages) {%>
+      	<li>
+        	<div><sub><%=message.added%></sub></div>
+        	<div><strong><%=message.user%></strong></div>
+        	<%=message.text%>
+      	</li>
+      <% } %>
+    </ul>
+  </body>
+</html>
