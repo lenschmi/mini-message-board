@@ -50,5 +50,8 @@ input[type=submit] {
 
 #add-message, #new-message-form {
   margin: 10px;
+}
+
+#new-message-form {
   padding: 20px;
 }
