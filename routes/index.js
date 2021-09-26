@@ -1,17 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const { DateTime } = require("luxon");
 
 // Define list of message
 const messages = [
 	{
-		text: "Hi there!",
-		user: "Amando",
-		added: new Date()
+		text: "Click 'Add Message' to join the conversation!",
+		user: "Admin",
+		added: DateTime.fromJSDate(new Date()).toLocaleString(DateTime.DATE_MED)
 	},
 	{
-		text: "Hello World!",
-		user: "Charles",
-		added: new Date()
+		text: "Welcome to the Mini Message Board!",
+		user: "Admin",
+		added: DateTime.fromJSDate(new Date()).toLocaleString(DateTime.DATE_MED)
 	}
 ];
 
@@ -29,7 +30,7 @@ router.get('/new', function(req, res, next) {
 router.post('/new', function(req, res, next) {
 	let messageText = req.body.message;
 	let messageUser = req.body.author;	
-	messages.push({text: messageText, user: messageUser, added: new Date()});
+	messages.unshift({text: messageText, user: messageUser, added: DateTime.fromJSDate(new Date()).toLocaleString(DateTime.DATE_MED)});
 	res.redirect('/');
 });
 

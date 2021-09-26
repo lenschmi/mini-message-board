@@ -1,9 +1,12 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
-		
-<a href="/">Cancel</a>
+	
 <form method="POST" action="/new">
-	<h2>Enter Your Message</h2>
-	<input type="text" name="author" id="author" placeholder="User Name" required>
-	<input type="text" name="message" id="message" placeholder="Enter your message..." required>	
-	<input type="submit" valud "Submit">
+	<div id=new-message>
+		<h1 class="header">Enter Your Message</h1>
+		<div id="new-message-form">
+			<div class="entry-item"><input type="text" name="author" id="author" placeholder="User Name" required></div>
+			<div class="entry-item"><input type="text" name="message" id="message" placeholder="Enter your message..." required> </div>
+			<input type="submit" value="Submit">
+		</div>
+	</div>
 </form>         

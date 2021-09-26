@@ -5,16 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-		<a href='/new'>Add Message</a>
-    <h1><%= title %></h1>
-		<ul>
-      <% for(const message of messages) {%>
-      	<li>
-        	<div><sub><%=message.added%></sub></div>
-        	<div><strong><%=message.user%></strong></div>
-        	<%=message.text%>
-      	</li>
-      <% } %>
-    </ul>
+    <div id="message_board">
+      <h1 class="header"><%=title%></h1>
+      <ul id="messages_list">
+        <form action="/new" id="add-message">
+          <input type="submit" value="Add Message">
+        </form>
+        <% for(const message of messages) {%>
+          <li class="single_message">
+            <div><sub><%=message.added%></sub></div>
+            <div><strong><%=message.user%></strong></div>
+            <div><%=message.text%></div>
+          </li>
+        <% } %>
+      </ul>
+    </div>
   </body>
 </html>
